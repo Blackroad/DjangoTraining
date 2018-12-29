@@ -8,8 +8,8 @@
 
      <!-- Include Styles -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/main.css">
 
 </head>
 <body>
@@ -69,25 +69,60 @@
                    <tbody>
                    <tr>
                        <td>1</td>
-                       <td><img height="30" width="30" src="./img/me.jpeg"></td>
+                       <td><img height="30" width="30" src="./img/me.jpeg" class="img-circle"></td>
                        <td><a title="Редагувати" href="#">Корост</a></td>
                        <td><a title="Редагувати" href="#">Андрій</a></td>
                        <td>2123</td>
                        <td>
                            <div class="dropdown">
-                               <button class="btn btn-default dropdown-toggle"type="button" data-toggle="dropdown">Дія
+                              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  Дія
                                 <span class="caret"></span>
                                </button>
-                               <ul class="dropdown-menu" role="menu">
-                                   <li role="presentation">
-                                       <a role="menuitem" tabindex="-1" href="#">Відвідування</a>
-                                   </li>
-                                   <li role="presentation">
-                                       <a role="menuitem" tabindex="-1" href="#">Редагувати</a>
-                                   </li>
-                                   <li role="presentation">
-                                       <a role="menuitem" tabindex="-1" href="#">Видалити</a>
-                                   </li>
+                               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                   <li><a href="#">Відвідування</a></li>
+                                   <li><a href="#">Редагувати</a></li>
+                                   <li><a href="#">Видалити</a></li>
+                               </ul>
+                          </div>
+                       </td>
+                   </tr>
+                    <tr>
+                       <td>2</td>
+                       <td><img height="30" width="30" src="./img/podoba3.jpg" class="img-circle"></td>
+                       <td><a title="Редагувати" href="#">Подоба</a></td>
+                       <td><a title="Редагувати" href="#">Віталій</a></td>
+                       <td>254</td>
+                       <td>
+                          <div class="dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  Дія
+                                <span class="caret"></span>
+                               </button>
+                               <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+                                   <li><a href="#">Відвідування</a></li>
+                                   <li><a href="#">Редагувати</a></li>
+                                   <li><a href="#">Видалити</a></li>
+                               </ul>
+                          </div>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>3</td>
+                       <td><img height="30" width="30" src="./img/piv.png" class="img-circle"></td>
+                       <td><a title="Редагувати" href="#">Притула</a></td>
+                       <td><a title="Редагувати" href="#">Тарас</a></td>
+                       <td>5332</td>
+                       <td>
+                           <div class="dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  Дія
+                                <span class="caret"></span>
+                               </button>
+                               <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                                   <li><a href="#">Відвідування</a></li>
+                                   <li><a href="#">Редагувати</a></li>
+                                   <li><a href="#">Видалити</a></li>
                                </ul>
                           </div>
                        </td>
@@ -95,6 +130,18 @@
                    </tbody>
                </table>
                <!-- End Students Listing -->
+             <nav>
+                 <ul class="pagination">
+                     <li><a href="#">&laquo;</a></li>
+                     <li><a href="#">1</a></li>
+                     <li class="active"><a href="#">2</a></li>
+                     <li><a href="#">3</a></li>
+                     <li><a href="#">4</a></li>
+                     <li><a href="#">5</a></li>
+                     <li><a href="#">&raquo;</a></li>
+                 </ul>
+             </nav>
+
                </div>
         </div>
        <!-- End Main Page Content -->
@@ -111,11 +158,8 @@
 
 
      <!-- Java Script Section-->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>
