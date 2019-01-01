@@ -15,7 +15,7 @@ margin-top: 10px;
   /* задаємо верхню межу елемента: ширина лінії, тип лінії, колір
  лінії */
 border-top: 1px solid #ddd;
-width: 100%;
+
 margin-inline-start: 0px;
 margin-inline-end: 0px;
 /* задаємо внутрішню відстань елемента до верхнього краю */
@@ -36,4 +36,8 @@ margin-top: 30px;
  height: 30px;
  line-height: 30px;
  color: #555555;
+}
+
+#calendar_scroll-column {
+margin: 10px
 }
