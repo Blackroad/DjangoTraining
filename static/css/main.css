@@ -43,7 +43,7 @@ margin: 10px
 }
 
 /* Input for edit  */
-#name, #fname, #sname, #ticketnum, #birthdate, #photo {
+#name, #fname, #sname, #ticketnum, #birthdate, #photo{
 margin-bottom: 12px;
 margin-left:0px;
 }
@@ -65,5 +65,10 @@ margin-bottom:0px;
 
 #fileselector {
 padding-left:0px;
-};
+}
+
+#choosefile p.text-right{
+text-align: left;
+margin-left: 196px
+}
 
