@@ -1,0 +1,74 @@
+ /* Global Styles */
+ h1, h2, h3, h4, h5, h6 {
+ font-weight: bold;
+}
+
+/* Це коментар в CSS */
+.alert {
+/* Ми додали відстань лише зверху елемента: -top */
+margin-top: 10px;
+}
+
+/* знайшли елемент футера по його унікальному ідентифікатору
+   footer */
+#footer {
+  /* задаємо верхню межу елемента: ширина лінії, тип лінії, колір
+ лінії */
+border-top: 1px solid #ddd;
+
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+/* задаємо внутрішню відстань елемента до верхнього краю */
+padding-top: 10px;
+}
+
+/* Groups Selector */
+#group-selector {
+margin-top: 30px;
+}
+
+#group-selector select {
+ margin: 1px;
+ width: 85%;
+ background-color: #ffffff;
+ border: 1px solid #cccccc;
+ height: 30px;
+ line-height: 30px;
+ color: #555555;
+}
+
+/* Month Selector */
+#calendar_scroll-column {
+margin: 10px
+}
+
+/* Input for edit  */
+#name, #fname, #sname, #ticketnum, #birthdate, #photo{
+margin-bottom: 12px;
+margin-left:0px;
+}
+
+div.col-md-2{
+padding-left:0px;
+margin-bottom: 2px;
+}
+
+#label p.text-right{
+margin-top:8px;
+margin-bottom: 12px;
+}
+
+#fileselector p.text-right {
+text-align: left;
+margin-bottom:0px;
+}
+
+#fileselector {
+padding-left:0px;
+}
+
+#choosefile p.text-right{
+text-align: left;
+margin-left: 196px
+}
+
