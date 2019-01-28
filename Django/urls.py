@@ -31,6 +31,5 @@ urlpatterns = [
     path(r'groups/<int:gid>/delete', main_views.groups_delete, name='groups_delete'),
     # visits urls
     path('visits/', main_views.visits_list, name='visits'),
-
     path('admin/', admin.site.urls),
 ]
