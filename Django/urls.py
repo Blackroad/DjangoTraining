@@ -15,21 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from students import views as main_views
+from students.views import groups, students, visits
 
 
 urlpatterns = [
     # students urls
-    path('', main_views.students_list, name='students_list'),
-    path('students/add', main_views.students_add, name='students_add'),
-    path(r'students/<int:sid>/edit', main_views.students_edit, name='students_edit'),
-    path(r'students/<int:sid>/delete', main_views.students_delete, name='students_delete'),
+    path('', students.students_list, name='students_list'),
+    path('students/add', students.students_add, name='students_add'),
+    path(r'students/<int:sid>/edit', students.students_edit, name='students_edit'),
+    path(r'students/<int:sid>/delete', students.students_delete, name='students_delete'),
     # students urls
-    path('groups/', main_views.groups_list, name='groups'),
-    path('groups/add', main_views.groups_add, name='groups_add'),
-    path(r'groups/<int:gid>/edit', main_views.groups_edit, name='groups_edit'),
-    path(r'groups/<int:gid>/delete', main_views.groups_delete, name='groups_delete'),
+    path('groups/', groups.groups_list, name='groups'),
+    path('groups/add', groups.groups_add, name='groups_add'),
+    path(r'groups/<int:gid>/edit', groups.groups_edit, name='groups_edit'),
+    path(r'groups/<int:gid>/delete', groups.groups_delete, name='groups_delete'),
     # visits urls
-    path('visits/', main_views.visits_list, name='visits'),
+    path('visits/', visits.visits_list, name='visits'),
     path('admin/', admin.site.urls),
 ]
