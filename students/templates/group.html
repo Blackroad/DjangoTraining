@@ -2,14 +2,14 @@
 
 {%load static from staticfiles %}
 
-{% block meta_title %}Групи{% endblock meta_title %}
+{% block meta_title %}Группи{% endblock meta_title %}
 
 {% block title %} Список Груп {% endblock title %}
 
 {% block content %}
 
                <!--Add Group Button-->
-               <a class="btn btn-primary" href="#">Додати Групу</a>
+               <a class="btn btn-primary" href='{% url "groups_add" %}'>Додати Групу</a>
                <!-- Start Groups Listing -->
                <table class="table table-hover table-striped">
                    <thead>
@@ -24,8 +24,8 @@
                {% for group in groups %}
                    <tr>
                        <td>{{forloop.counter}}</td>
-                       <td><a title="Редагувати" href="#">{{group.group_name}}</a></td>
-                       <td><a title="Редагувати" href="#">{{group.leader}}</a></td>
+                       <td><a title="Редагувати" href='{% url "groups_edit" group.group_id %}'>{{group.group_name}}</a></td>
+                       <td><a title="Редагувати" href='{% url "groups_edit" group.group_id %}'>{{group.leader}}</a></td>
                        <td>
                            <div class="dropdown">
                               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -33,9 +33,9 @@
                                 <span class="caret"></span>
                                </button>
                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                   <li><a href="#">Відвідування</a></li>
-                                   <li><a href="#">Редагувати</a></li>
-                                   <li><a href="#">Видалити</a></li>
+                                   <li><a href='/visits/{{group_id}}'>Відвідування</a></li>
+                                   <li><a href='{% url "groups_edit" group.group_id %}'>Редагувати</a></li>
+                                   <li><a href='{% url "groups_delete" group.group_id %}'>Видалити</a></li>
                                </ul>
                           </div>
                        </td>

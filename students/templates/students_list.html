@@ -1,17 +1,9 @@
 {% extends "base.html" %}
-
 {%load static from staticfiles %}
-
 {% block meta_title %}Студенти{% endblock meta_title %}
-
 {% block title %} База Студентів {% endblock title %}
-
 {% block content %}
-
-<!DOCTYPE html>
-
-
-               <!--Add Student Button-->
+ <!--Add Student Button-->
                <a class="btn btn-primary" href='{% url "students_add" %}'>Додати Студента</a>
                <!-- Start Students Listing -->
                <table class="table table-hover table-striped">
