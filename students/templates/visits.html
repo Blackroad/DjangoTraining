@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{%load static from staticfiles %}
+{% block meta_title %}Відвідування{% endblock meta_title %}
+{% block title %} Облік відвідувань{% endblock title %}
+{% block content %}
+
+<!DOCTYPE html>
+               <!--Month scroll-->
+               <div class="row" id="calendar_scroll"></div>
+               <div class="col-lg-12" id="calendar_scroll-column">
+                   <div class="text-center"><strong><a href="#">&larr;</a> Жовтень <a href="#">&rarr;</a></strong></div>
+               </div>
+               <!--End of month scroll-->
+                      <!--Table with checks-->
+                       <table class="table table-bordered">
+                           <thead>
+                           <tr>
+                               <th>#</th>
+                               <th>Студент</th>
+                               <th>Ср 1 </th>
+                               <th>Чт 2 </th>
+                               <th>Пт 3 </th>
+                               <th>Сб 4 </th>
+                               <th>Нд 5 </th>
+                               <th>Пн 6 </th>
+                               <th>Вт 7 </th>
+                               <th>Ср 8 </th>
+                               <th>Чт 9</th>
+                               <th>Пт 10</th>
+                               <th>Сб 11 </th>
+                               <th>Нд 12 </th>
+                               <th>Пн 13 </th>
+                               <th>Вт 14 </th>
+                               <th>Ср 15 </th>
+                               <th>Чт 16</th>
+                               <th>Пт 17</th>
+                               <th>Сб 18 </th>
+                               <th>Нд 19 </th>
+                               <th>Пн 20</th>
+                               <th>Вт 21</th>
+                               <th>Ср 22</th>
+                               <th>Чт 23</th>
+                               <th>Пт 24</th>
+                               <th>Сб 25 </th>
+                               <th>Нд 26 </th>
+                               <th>Пн 27 </th>
+                               <th>Вт 28</th>
+                               <th>Ср 29</th>
+                               <th>Чт 30</th>
+                               <th>Пт 31</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                 {% for visit in visits %}
+                   <tr>
+                       <td>{{forloop.counter}}</td>
+                       <td><a title="Редагувати" href="#">{{visit.student}}</a></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                       <td><input type="checkbox"></td>
+                   </tr>
+                 {% endfor %}
+                           </tbody>
+                       </table>
+
+{% endblock%}
+

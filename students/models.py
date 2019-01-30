@@ -6,9 +6,8 @@ import datetime
 def date(year,month):
     date = datetime.date(year,month+1,1) - datetime.date(year,month,1)
     days = date.days
-    i = [i for i in range(1,days+1)]
-    for item in i:
-        print (item)
+    print(days)
+
 
 
 
