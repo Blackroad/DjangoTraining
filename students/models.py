@@ -1,15 +1,42 @@
 from django.db import models
-import datetime
+
 # Create your models here.
 
 
-def date(year,month):
-    date = datetime.date(year,month+1,1) - datetime.date(year,month,1)
-    days = date.days
-    print(days)
+class Student(models.Model):
 
+    """Student Model"""
+    first_name = models.CharField(
+        max_length=246,
+        blank=False,
+        verbose_name=u"Им'я")
 
+    last_name = models.CharField(
+        max_length=246,
+        blank=False,
+        verbose_name=u"Прізвище")
 
+    middle_name = models.CharField(
+        max_length=246,
+        blank=False,
+        verbose_name=u"По-батькові",
+        default='')
 
+    birthday = models.DateField(
+        blank=False,
+        verbose_name=u"Дата народження",
+        null=True)
 
-date(2018,10)
+    photo = models.ImageField(
+        blank=False,
+        verbose_name=u"Фото",
+        null=True)
+
+    ticket = models.CharField(
+        max_length=246,
+        blank=False,
+        verbose_name=u"Білет")
+
+    notes = models.TextField(
+        blank=True,
+        verbose_name=u"Додаткові нотатки")
