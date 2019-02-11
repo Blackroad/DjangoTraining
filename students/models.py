@@ -31,7 +31,7 @@ class Student(models.Model):
         null=True)
 
     photo = models.ImageField(
-        blank=False,
+        blank=True,
         verbose_name=u"Фото",
         null=True)
 

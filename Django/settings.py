@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'Django.context_processors.students_proc',
+                'django.template.context_processors.media'
 
             ],
         },
@@ -123,5 +124,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 PORTAL_URL = 'http://localhost:8000'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+MEDIA_URL =  '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'students', 'static','media')
