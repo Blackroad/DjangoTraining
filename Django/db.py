@@ -4,6 +4,6 @@ DATABASES = {
         'HOST': 'localhost',
         'USER': 'students_db_user',
         'PASSWORD': '1234',
-        'NAME': 'students_db',
+        'NAME': 'db_students',
     }
 }
