@@ -1,31 +1,31 @@
 {% extends "base.html" %}
-
-{%load static from staticfiles %}
-
+{% load static from staticfiles %}
 {% block meta_title %}Группи{% endblock meta_title %}
-
 {% block title %} Список Груп {% endblock title %}
-
 {% block content %}
-
                <!--Add Group Button-->
                <a class="btn btn-primary" href='{% url "groups_add" %}'>Додати Групу</a>
                <!-- Start Groups Listing -->
                <table class="table table-hover table-striped">
+                   {% with order_by=request.GET.order_by|default:'title'  reverse=request.GET.reverse %}
                    <thead>
                    <tr>
                        <th>#</th>
-                       <th><a href="">Назва &uarr;</a></th>
+                       <th><a href="{% url 'groups' %}?order_by=title{% if order_by == 'title' and reverse != '1'%}&amp;reverse=1{%endif%}">Назва
+                           {% if order_by == 'title' and reverse != '1'%}&uarr;
+                           {%elif order_by == 'title' and reverse == '1'%}&darr;
+                           {%endif%}</a></th>
                        <th><a href="#">Староста</a></th>
                        <th>Дії</th>
                    </tr>
                    </thead>
+                   {% endwith %}
                <tbody>
                {% for group in groups %}
                    <tr>
                        <td>{{forloop.counter}}</td>
-                       <td><a title="Редагувати" href='{% url "groups_edit" group.group_id %}'>{{group.group_name}}</a></td>
-                       <td><a title="Редагувати" href='{% url "groups_edit" group.group_id %}'>{{group.leader}}</a></td>
+                       <td><a title="Редагувати" href='{% url "groups_edit" group.id %}'>{{group.title}}</a></td>
+                       <td><a title="Редагувати" href='{% url "groups_edit" group.id %}'>{{group.leader}}</a></td>
                        <td>
                            <div class="dropdown">
                               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -34,8 +34,8 @@
                                </button>
                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                    <li><a href='/visits/{{group_id}}'>Відвідування</a></li>
-                                   <li><a href='{% url "groups_edit" group.group_id %}'>Редагувати</a></li>
-                                   <li><a href='{% url "groups_delete" group.group_id %}'>Видалити</a></li>
+                                   <li><a href='{% url "groups_edit" group.id %}'>Редагувати</a></li>
+                                   <li><a href='{% url "groups_delete" group.id %}'>Видалити</a></li>
                                </ul>
                           </div>
                        </td>

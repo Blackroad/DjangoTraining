@@ -1,32 +1,26 @@
 from django.shortcuts import render
+from ..model.group import Group
 from django.http import HttpResponse
+# from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def groups_list(request):
-    groups = (
-        {'group_id': 1,
-         'group_name': u'МтМ-21',
-         'leader': u'Ячменев Олег'
-         },
-        {'group_id': 2,
-         'group_name': u'МтМ-22',
-         'leader': u'Віталій Подоба'
-         },
-        {'group_id': 3,
-         'group_name': u'МтМ-23',
-         'leader': u'Іванов Андрій'
-         },
-    )
+    groups = Group.objects.order_by('title')
+    order_by = request.GET.get('order_by', '')
+    if order_by in ('id', 'title', 'leader'):
+        groups = groups.order_by(order_by)
+        if request.GET.get('reverse', '') == '1':
+            groups = groups.reverse()
     return render(request, 'group.html', {'groups': groups})
 
 
-def groups_add(request):
+def groups_add():
     return HttpResponse('<h1>Group Add Form</h1>')
 
 
-def groups_edit(request, gid):
-    return HttpResponse('<h1>Edit Add Form %s</h1>' %gid)
+def groups_edit(gid):
+    return HttpResponse('<h1>Edit Add Form %s</h1>' % gid)
 
 
-def groups_delete(request, gid):
+def groups_delete(gid):
     return HttpResponse('<h1>Delete Group %s</h1>' % gid)
