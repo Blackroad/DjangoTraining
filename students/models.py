@@ -11,7 +11,7 @@ def get_days():
     ukr_day = [days_urk.get(i) for i in [i for i in [datetime.date(today.year, today.month, i).strftime('%a') for i in range(1, int(days_number.days)+1)]]]
     f = list(map(list, zip(ukr_day,days)))
     for i in f:
-        print(i[0] + str(i[1]))
+        print('{},{}'.format(i[0],str(i[1])))
 
 
 
