@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from ..model.students import Student
+from students.model.students import Student
 # from django.http import HttpResponse
 from ..static.localization_data.date_translation import DateTranslation
 import datetime
@@ -30,5 +30,10 @@ def visits_list(request):
     current_month = (datetime.date.today()).strftime('%B')
     # get compile weekdays with number days
     compile_days = get_days()
-    visits = Student.objects.values('first_name', 'last_name')
+    visits = Student.objects.values('first_name', 'last_name').order_by('last_name')
+    order_by = request.GET.get('order_by', '')
+    if order_by in ('first_name', 'last_name'):
+        visits = visits.order_by(order_by)
+        if request.GET.get('reverse', '') == '1':
+            visits = visits.reverse()
     return render(request, 'visits.html', {'visits': visits, 'days': compile_days, 'current_month': all_month.get(current_month)})

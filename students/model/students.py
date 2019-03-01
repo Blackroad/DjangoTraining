@@ -46,6 +46,5 @@ class Student(models.Model):
 
     student_group = models.ForeignKey('Group', verbose_name=u"Група", blank=True,  null=True, on_delete=models.PROTECT)
 
-
     def __str__(self):
         return u"%s %s" % (self.first_name, self.last_name)

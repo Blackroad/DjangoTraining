@@ -13,20 +13,28 @@
                <!--End of month scroll-->
                       <!--Table with checks-->
                        <table class="table table-bordered">
+                       {% with order_by=request.GET.order_by|default:'last_name' reverse=request.GET.reverse %}
                            <thead>
                            <tr>
                                <th>#</th>
-                               <th>Студент</th>
+                               <th>
+                                   <a href="{% url 'visits'%}?order_by=last_name{% if order_by == 'last_name' and reverse != '1'%}&amp;reverse=1{%endif%}">
+                           Студент {% if order_by == 'last_name' and reverse != '1'%}&uarr;
+                           {%elif order_by == 'last_name' and reverse == '1'%}&darr;
+                               {%endif%}
+                               </a>
+                               </th>
                                {% for day in days %}
                                <th>{{day}}</th>
                                {% endfor %}
                            </tr>
                            </thead>
+                       {% endwith %}
                            <tbody>
                  {% for visit in visits %}
                    <tr>
                        <td>{{forloop.counter}}</td>
-                       <td><a title="Редагувати" href="#">{{visit.first_name}} {{ visit.last_name }}</a></td>
+                       <td><a title="Редагувати" href="#">{{ visit.last_name }} {{visit.first_name}} </a></td>
                        {% for day in days %}
                        <td><input type="checkbox" id={{ forloop.counter }} /><label for = {{ forloop.counter }}></label> </td>
                            {% endfor %}
